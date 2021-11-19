@@ -67,7 +67,7 @@ int main(int argc, char **argv)
     UNITY_BEGIN();
 
     ASSERT_ACTIVATION(1);
-    /*UNIT_TEST_RUN(unittest_Recep_GetHeader);
+    UNIT_TEST_RUN(unittest_Recep_GetHeader);
     UNIT_TEST_RUN(unittest_Recep_GetData);
     UNIT_TEST_RUN(unittest_Recep_GetCollision);
     UNIT_TEST_RUN(unittest_Recep_Drop);
@@ -78,5 +78,5 @@ int main(int argc, char **argv)
     UNIT_TEST_RUN(unittest_Recep_Timeout);
     UNIT_TEST_RUN(unittest_Recep_InterpretMsgProtocol);
     UNIT_TEST_RUN(unittest_Recep_NodeConcerned);
-    UNIT_TEST_RUN(unittest_Recep_GetConcernedLLService);*/
+    UNIT_TEST_RUN(unittest_Recep_GetConcernedLLService);
 }
