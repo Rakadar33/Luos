@@ -2,9 +2,10 @@ name: aaa
 
 
 on:
-  push:
-    branches-ignore:
-      - master
+  workflow_dispatch:
+  #push:
+  #  branches-ignore:
+  #    - master
   
 jobs:
   aaa:
@@ -48,9 +49,8 @@ jobs:
       shell: bash
       run: |
         # Save branch name
-        branch_name=unit_test_tx_rx
-        origine_branch_name="origin/${branch_name}"
-        echo current branch name is ${branch_name}
+        git checkout 
+        git branch unit_test_tx_rx
 
         # Step back and get dependancies
         cd ..
