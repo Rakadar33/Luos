@@ -49,8 +49,7 @@ jobs:
       shell: bash
       run: |
         # Save branch name
-        git branch 
-        git checkout unit_test_tx_rx
+
 
         # Step back and get dependancies
         cd ..
