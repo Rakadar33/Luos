@@ -11,7 +11,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
+        #os: [macos-latest, windows-latest, ubuntu-latest]
+        os: [windows-latest]
         include:
         - os: windows-latest
           pio_lib_path: D:\a\Luos
