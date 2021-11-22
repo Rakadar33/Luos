@@ -54,23 +54,6 @@ jobs:
         # Step back and get dependancies
         cd ..
 
-        # LuosHAL
-        git clone https://github.com/Rakadar33/LuosHAL.git
-        cd LuosHAL
-        cd ..
-
-        # Examples
-        git clone https://github.com/Luos-io/Examples.git
-        cd Examples
-        cd ..
-
-    - name: Run PlatformIO
-      env:
-        PLATFORMIO_LIB_EXTRA_DIRS: ${{ matrix.pio_lib_path }}
-      run: |
-        cd ../Examples/
-        # L0
-        platformio run -d Projects/l0/Button
 
     - name: Run PlatformIO Unit Tests
       env:
