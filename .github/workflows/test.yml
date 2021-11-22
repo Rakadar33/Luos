@@ -64,11 +64,11 @@ jobs:
         platformio run -t clean        
         platformio test -e native -v --filter "memory_allocator_static"
         
-    - name: Run Unit Test Tx
-      env:
-        PLATFORMIO_LIB_EXTRA_DIRS: ${{ matrix.pio_lib_path }}
-      run: |
-        cd ../Luos/
-        platformio run -t clean        
-        platformio test -e native -v --filter "transmission"        
+    #- name: Run Unit Test Tx
+    #  env:
+    #    PLATFORMIO_LIB_EXTRA_DIRS: ${{ matrix.pio_lib_path }}
+    #  run: |
+    #    cd ../Luos/
+    #    platformio run -t clean        
+    #    platformio test -e native -v --filter "transmission"        
 
