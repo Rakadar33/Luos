@@ -1,7 +1,10 @@
 name: Dev Build
 
 on:
-  pull_request:
+  push:
+    branches-ignore:
+      - master
+  
 
 jobs:
 
