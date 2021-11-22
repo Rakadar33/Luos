@@ -2,13 +2,11 @@ name: aaa
 
 on:
   push:
-    branches-ignore:
-      - master
   
 
 jobs:
 
-  abc:
+  aaa:
     
     runs-on: ${{ matrix.os }}
     strategy:
@@ -44,9 +42,6 @@ jobs:
     - name: Check out Luos repository
       uses: actions/checkout@v2
 
-    - name: Check for code format
-      if: ${{ runner.os != 'Windows' }}
-      run: python .github/workflows/run-clang-format.py -r .
 
     - name: Create env repo
       shell: bash
