@@ -17,10 +17,10 @@ jobs:
         include:
         - os: windows-latest
           pio_lib_path: D:\a\Luos
-        - os: macos-latest
-          pio_lib_path: ~/work/Luos
-        - os: ubuntu-latest
-          pio_lib_path: ~/work/Luos
+        #- os: macos-latest
+        #  pio_lib_path: ~/work/Luos
+        #- os: ubuntu-latest
+        #  pio_lib_path: ~/work/Luos
 
 
     steps:
@@ -67,13 +67,6 @@ jobs:
         # Examples
         git clone https://github.com/Luos-io/Examples.git
         cd Examples
-        if [ `git branch -r --list $origine_branch_name` ]
-        then
-          echo A dependant branch have been found on Examples
-          git checkout $branch_name
-        else
-          echo use master branch on Examples
-        fi
         cd ..
 
     - name: Run PlatformIO
