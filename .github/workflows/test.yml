@@ -11,15 +11,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        #os: [macos-latest, windows-latest, ubuntu-latest]
-        os: [macos-latest]
+        os: [macos-latest, windows-latest, ubuntu-latest]
         include:
-        #- os: windows-latest
-        #  pio_lib_path: D:\a\Luos
+        - os: windows-latest
+          pio_lib_path: D:\a\Luos
         - os: macos-latest
           pio_lib_path: ~/work/Luos
-        #- os: ubuntu-latest
-        #  pio_lib_path: ~/work/Luos
+        - os: ubuntu-latest
+          pio_lib_path: ~/work/Luos
 
 
     steps:
@@ -56,6 +55,15 @@ jobs:
         cd ..
 
 
+    - name: Run Unit Test Tx
+
+      env:
+        PLATFORMIO_LIB_EXTRA_DIRS: ${{ matrix.pio_lib_path }}
+      run: |
+        cd ../Luos/
+        platformio run -t clean        
+        platformio test -e native -v --filter "transmission"
+        
     - name: Run Unit Test mem alloc static
       env:
         PLATFORMIO_LIB_EXTRA_DIRS: ${{ matrix.pio_lib_path }}
@@ -63,12 +71,4 @@ jobs:
         cd ../Luos/
         platformio run -t clean        
         platformio test -e native -v --filter "memory_allocator_static"
-        
-    #- name: Run Unit Test Tx
-    #  env:
-    #    PLATFORMIO_LIB_EXTRA_DIRS: ${{ matrix.pio_lib_path }}
-    #  run: |
-    #    cd ../Luos/
-    #    platformio run -t clean        
-    #    platformio test -e native -v --filter "transmission"        
 
