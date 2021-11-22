@@ -1,11 +1,12 @@
 name: aaa
 
+
 on:
   push:
+    branches-ignore:
+      - master
   
-
 jobs:
-
   aaa:
     
     runs-on: ${{ matrix.os }}
