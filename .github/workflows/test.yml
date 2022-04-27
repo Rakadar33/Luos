@@ -9,7 +9,6 @@ on:
   
 jobs:
   aaa:
-    
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -72,3 +71,19 @@ jobs:
         platformio run -t clean        
         platformio test -e native -v --filter "memory_allocator_static"
 
+
+
+  bbb:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+        include:
+        - os: windows-latest
+          pio_lib_path: D:\a\Luos
+    steps:
+        
+    - name: LS
+      shell: bash
+      run: |
+        ls
