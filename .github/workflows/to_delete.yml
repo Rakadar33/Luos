@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  dev-build:
+  to-delete:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -35,15 +35,15 @@ jobs:
 
       - name: Get Luos Engine
         run: |
-          dir /ad
+          dir
           D:
-          dir /ad
+          dir
           cd D:\a\Luos
-          dir /ad
+          dir
           git clone https://github.com/Luos-io/Luos_engine.git
-          dir /ad
+          dir
           cd Luos_engine
-          dir /ad
+          dir
 
       - name: Run PlatformIO
         run: |
