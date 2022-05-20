@@ -47,6 +47,8 @@ jobs:
 
       - name: Run PlatformIO
         run: |
+          D:
+          cd D:\a\Luos\Luos_engine
           # L0
           platformio run -d examples/projects/l0/button
 
@@ -55,6 +57,8 @@ jobs:
           PLATFORMIO_LIB_EXTRA_DIRS: ${{ matrix.pio_lib_path }}
         if: ${{ runner.os == 'Windows' }}
         run: |
+          D:
+          cd D:\a\Luos\Luos_engine
           # Clean all projects
           platformio run -t clean -c .\test\_resources\platformio.ini
 
